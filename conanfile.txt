@@ -1,0 +1,10 @@
+[requires]
+SystemC/2.3.2@minres/stable
+SystemCVerification/2.0.0a@minres/stable
+
+[generators]
+cmake
+
+[options]
+SystemC:stdcxx=14
+SystemCVerification:stdcxx=14
