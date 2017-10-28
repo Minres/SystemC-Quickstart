@@ -18,7 +18,7 @@ Now install needed packages (SystemC and SCV library), build the project and run
 cd SystemC-Quickstart
 mkdir build
 cd build
-conan install ..
+conan install .. --build=missing
 cmake ..
 cmake --build .
 bin/TransactionExample
