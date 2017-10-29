@@ -7,7 +7,7 @@ A simple C++ CMake project to jump-start development of SystemC-based models and
 Building the project from source is simple. First you need to install [conan.io](https://conan.io/) according to the [instructions](http://docs.conan.io/en/latest/installation.html) and setup the Minres remote:
 ```
 pip install conan
-conan remote add minres https://dl.bintray.com/minres/conan-repo
+conan remote add minres https://api.bintray.com/conan/minres/conan-repo
 ```
 Then clone the SystemC-Quickstart repo:
 ```
