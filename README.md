@@ -26,3 +26,11 @@ bin/TransactionExample
 Et voila you completed your first SystemC simulation even with transaction recording!
 If you would like to analyze the recording output further just download the latest release of 
 [SCViewer](https://github.com/Minres/SCViewer/releases) to open the transaction_example.txlog.
+
+## Notes
+
+If you encounter issues when linking wrt. c++11 symbols you might have run into GCC ABI incompatibility introduced from GCC 5.0 onwards. You can fix this by adding '-s compiler.libcxx=libstdc++11' to the conan call or changing compiler.libcxx to
+```
+compiler.libcxx=libstdc++11
+```
+in $HOME/.conan/profiles/default
