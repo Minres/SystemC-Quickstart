@@ -22,6 +22,10 @@
 // this code compiles and runs with our latest prototype for this specification
 
 #include "scv.h"
+#include <list>
+#include <iostream>
+
+using namespace std;
 
 // hack to fake a true fifo_mutex
 #define fifo_mutex sc_mutex

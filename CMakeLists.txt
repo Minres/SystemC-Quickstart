@@ -11,6 +11,22 @@ set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
+find_package(SystemC REQUIRED)
+if(SystemC_FOUND)
+    include_directories(${SystemC_INCLUDE_DIRS})
+    link_directories(${SystemC_LIBRARY_DIRS})
+else()
+    message( FATAL_ERROR "SystemC library not found." )
+endif()
+
+if(SCV_FOUND)   
+    add_definitions(-DWITH_SCV)
+    include_directories(${SCV_INCLUDE_DIRS})
+    link_directories(${SCV_LIBRARY_DIRS})
+else()
+    message( FATAL_ERROR "SystemC Verification library not found." )
+endif(SCV_FOUND)
+
 add_executable(TransactionExample main.cpp)
 target_link_libraries(TransactionExample ${CONAN_LIBS})
 
