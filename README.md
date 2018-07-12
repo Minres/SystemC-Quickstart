@@ -1,5 +1,28 @@
 # SystemC-Quickstart
-A simple C++ CMake project to jump-start development of SystemC-based models and systems
+A simple C++ CMake project to jump-start development of SystemC-based models and systems. It also shows the power of using a package manager. E.g. to deploy SystemC CCI to your project, changing conanfile.txt to
+```
+[requires]
+SystemC/2.3.2@minres/stable
+SystemCVerification/2.0.1@minres/stable
+SystemC-CCI/1.0.0@minres/stable
+
+[generators]
+cmake
+
+[options]
+SystemC:stdcxx=14
+SystemCVerification:stdcxx=14
+SystemC-CCI:stdcxx=14
+```
+followed by 
+```
+conan install . --build=missing
+```
+in the project root is sufficient to be able to start using CCI in your models.
+
+When using Eclipse CDT as developemnt environment it is highly recommended to install Martin Webers
+[cmake4eclipse](https://marketplace.eclipse.org/content/cmake4eclipse) extension as it imports not only the
+cmake configuration settings rather also those coming from the conan packages
 
 # How to build
 > Currently only Linux and MacOS are tested
@@ -34,3 +57,42 @@ If you encounter issues when linking wrt. c++11 symbols you might have run into 
 compiler.libcxx=libstdc++11
 ```
 in $HOME/.conan/profiles/default
+
+## Detailed Setup steps
+
+### Ubuntu 18.04
+
+```
+#prepare system
+sudo apt-get install -y git python-pip build-essential cmake libloki-dev zlib1g-dev libncurses5-dev \	
+    libboost-dev libboost-program-options-dev libboost-system-dev libboost-thread-dev llvm-dev llvm-doc
+#install conan
+pip install --user conan
+export PATH=${PATH}:$HOME/.local/bin
+```
+
+### Fedora 28
+
+```
+#prepare system
+dnf install @development-tools gcc-c++ boost-devel zlib-devel loki-lib-devel cmake python2 python3 llvm-devel llvm-static
+#install conan
+pip3 install --user conan
+export PATH=${PATH}:$HOME/.local/bin
+```
+ 
+### Build the project
+
+```
+# configure conan
+conan remote add minres https://api.bintray.com/conan/minres/conan-repo
+conan profile new default --detect
+# clone the project
+git clone https://github.com/Minres/SystemC-Quickstart.git
+cd SystemC-Quickstart
+mkdir build; cd build
+conan install .. --build=missing
+cmake ..
+cmake --build .
+bin/TransactionExample
+```
