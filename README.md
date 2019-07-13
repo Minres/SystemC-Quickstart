@@ -11,7 +11,7 @@ make
 gets you to build a SystemC simulation. E.g. to deploy SystemC CCI to your project, changing conanfile.txt in the project root to
 ```
 [requires]
-SystemC/2.3.2@minres/stable
+SystemC/2.3.3@minres/stable
 SystemCVerification/2.0.1@minres/stable
 SystemC-CCI/1.0.0@minres/stable
 
