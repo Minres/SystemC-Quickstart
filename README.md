@@ -1,8 +1,17 @@
 # SystemC-Quickstart
-A simple C++ CMake project to jump-start development of SystemC-based models and systems. It also shows the power of using a package manager. E.g. to deploy SystemC CCI to your project, changing conanfile.txt to
+A simple C++ CMake project to jump-start development of SystemC-based models and systems. It also shows the power of using a package manager:
+```
+git clone https://github.com/Minres/SystemC-Quickstart
+cd SystemC-Quickstart/
+mkdir build
+cd build/
+cmake ..
+make
+``` 
+gets you to build a SystemC simulation. E.g. to deploy SystemC CCI to your project, changing conanfile.txt in the project root to
 ```
 [requires]
-SystemC/2.3.2@minres/stable
+SystemC/2.3.3@minres/stable
 SystemCVerification/2.0.1@minres/stable
 SystemC-CCI/1.0.0@minres/stable
 
@@ -14,17 +23,13 @@ SystemC:stdcxx=14
 SystemCVerification:stdcxx=14
 SystemC-CCI:stdcxx=14
 ```
-followed by 
-```
-conan install . --build=missing
-```
-in the project root is sufficient to be able to start using CCI in your models.
+is sufficient to be able to start using CCI in your models.
 
 When using Eclipse CDT as developemnt environment it is highly recommended to install Martin Webers
 [cmake4eclipse](https://marketplace.eclipse.org/content/cmake4eclipse) extension as it imports not only the
 cmake configuration settings rather also those coming from the conan packages
 
-# How to build
+# How to build (full story)
 > Currently only Linux and MacOS are tested
 
 Building the project from source is simple. First you need to install [conan.io](https://conan.io/) according to the [instructions](http://docs.conan.io/en/latest/installation.html) and setup the Minres remote:
@@ -36,14 +41,12 @@ Then clone the SystemC-Quickstart repo:
 ```
 git clone https://github.com/Minres/SystemC-Quickstart.git
 ```
-Now install needed packages (SystemC and SCV library), build the project and run it:
+Build the project (it will download the needed libraries) and run it:
 ```
 cd SystemC-Quickstart
 mkdir build
 cd build
-conan install .. --build=missing
 cmake ..
-cmake --build .
 bin/TransactionExample
 ```
 Et voila you completed your first SystemC simulation even with transaction recording!
@@ -91,7 +94,6 @@ conan profile new default --detect
 git clone https://github.com/Minres/SystemC-Quickstart.git
 cd SystemC-Quickstart
 mkdir build; cd build
-conan install .. --build=missing
 cmake ..
 cmake --build .
 bin/TransactionExample
