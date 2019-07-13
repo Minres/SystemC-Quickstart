@@ -1,4 +1,6 @@
 # SystemC-Quickstart
+> For a conan-only version please check the [conan-only](https://github.com/Minres/SystemC-Quickstart/tree/conan_only) branch.
+
 A simple C++ CMake project to jump-start development of SystemC-based models and systems. It also shows the power of using a package manager:
 ```
 git clone https://github.com/Minres/SystemC-Quickstart
