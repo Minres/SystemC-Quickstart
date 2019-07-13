@@ -29,13 +29,14 @@ When using Eclipse CDT as developemnt environment it is highly recommended to in
 [cmake4eclipse](https://marketplace.eclipse.org/content/cmake4eclipse) extension as it imports not only the
 cmake configuration settings rather also those coming from the conan packages
 
-# How to build
+# How to build (full story)
 > Currently only Linux and MacOS are tested
 
 Building the project from source is simple. First you need to install [conan.io](https://conan.io/) according to the [instructions](http://docs.conan.io/en/latest/installation.html) and setup the Minres remote:
 ```
 pip install conan
 conan remote add minres https://api.bintray.com/conan/minres/conan-repo
+conan profile new default --detect
 ```
 Then clone the SystemC-Quickstart repo:
 ```
@@ -50,7 +51,7 @@ cmake ..
 cmake --build .
 bin/TransactionExample
 ```
-Et voila you completed your first SystemC simulation even with transaction recording!
+Et voila you completed your first SystemC simulation even with SCV transaction recording!
 If you would like to analyze the recording output further just download the latest release of 
 [SCViewer](https://github.com/Minres/SCViewer/releases) to open the transaction_example.txlog.
 
