@@ -1,6 +1,6 @@
 [requires]
-SystemC/2.3.2@minres/stable
-SystemCVerification/2.0.0a@minres/stable
+SystemC/2.3.3@minres/stable
+SystemCVerification/2.0.1@minres/stable
 
 [generators]
 cmake
