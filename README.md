@@ -47,6 +47,7 @@ cd SystemC-Quickstart
 mkdir build
 cd build
 cmake ..
+cmake --build .
 bin/TransactionExample
 ```
 Et voila you completed your first SystemC simulation even with transaction recording!
