@@ -5,11 +5,11 @@ include(Conan)
 
 project(TransactionExample CXX)
 
-setup_conan()
-
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
+
+setup_conan()
 
 find_package(SystemC REQUIRED)
 if(SystemC_FOUND)
