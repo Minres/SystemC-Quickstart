@@ -8,16 +8,19 @@ SET(_SYSTEMC_HINTS
   "[HKEY_LOCAL_MACHINE\\SOFTWARE\\SystemC\\2.2;SystemcHome]/include"
   ${SYSTEMC_PREFIX}/include
   ${SYSTEMC_PREFIX}/lib
+  ${SYSTEMC_PREFIX}/lib64
   ${SYSTEMC_PREFIX}/lib-linux
   ${SYSTEMC_PREFIX}/lib-linux64
   ${SYSTEMC_PREFIX}/lib-macos
   $ENV{SYSTEMC_PREFIX}/include
   $ENV{SYSTEMC_PREFIX}/lib
+  $ENV{SYSTEMC_PREFIX}/lib64
   $ENV{SYSTEMC_PREFIX}/lib-linux
   $ENV{SYSTEMC_PREFIX}/lib-linux64
   $ENV{SYSTEMC_PREFIX}/lib-macos
   $ENV{SYSTEMC_HOME}/include
   $ENV{SYSTEMC_HOME}/lib
+  $ENV{SYSTEMC_HOME}/lib64
   $ENV{SYSTEMC_HOME}/lib-linux
   $ENV{SYSTEMC_HOME}/lib-linux64
   $ENV{SYSTEMC_HOME}/lib-macos

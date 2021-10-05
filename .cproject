@@ -16,7 +16,7 @@
 					<folderInfo id="cdt.managedbuild.config.gnu.macosx.exe.debug.1254489960." name="/" resourcePath="">
 						<toolChain id="cdt.managedbuild.toolchain.gnu.base.1851848522" name="Linux GCC" superClass="cdt.managedbuild.toolchain.gnu.base">
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.GNU_ELF" id="cdt.managedbuild.target.gnu.platform.base.396979917" name="Debug Platform" osList="linux,hpux,aix,qnx" superClass="cdt.managedbuild.target.gnu.platform.base"/>
-							<builder buildPath="/SystemC-Quickstart/build/Debug" id="de.marw.cdt.cmake.core.genscriptbuilder.200465448" keepEnvironmentInBuildfile="false" name="CMake Builder (portable)" parallelBuildOn="false" superClass="de.marw.cdt.cmake.core.genscriptbuilder"/>
+							<builder buildPath="/SystemC-Quickstart/build/Debug" id="de.marw.cdt.cmake.core.genscriptbuilder.200465448" keepEnvironmentInBuildfile="false" name="CMake Builder" parallelBuildOn="false" superClass="de.marw.cdt.cmake.core.genscriptbuilder"/>
 							<tool id="cdt.managedbuild.tool.gnu.archiver.base.429688459" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base"/>
 							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.base.331550373" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.base">
 								<option id="gnu.cpp.compiler.option.optimization.level.1160463626" name="Optimization Level" superClass="gnu.cpp.compiler.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
