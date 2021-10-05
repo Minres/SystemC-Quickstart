@@ -36,12 +36,21 @@ cmake configuration settings rather also those coming from the conan packages
 
 ## Using conan
 Building the project from source is simple. First you need to install [conan.io](https://conan.io/) according to the [instructions](http://docs.conan.io/en/latest/installation.html) and setup the Minres remote:
+
 ```
 pip install conan
 conan remote add minres https://api.bintray.com/conan/minres/conan-repo
 conan profile new default --detect
 ```
-Then clone the SystemC-Quickstart repo and build the project:
+
+Then clone the SystemC-Quickstart repo:
+
+```
+git clone https://github.com/Minres/SystemC-Quickstart.git
+```
+
+Now install needed packages (SystemC and SCV library), build the project and run it:
+
 ```
 cd SystemC-Quickstart
 mkdir build
@@ -50,7 +59,8 @@ cmake ..
 cmake --build .
 bin/TransactionExample
 ```
-Et voila you completed your first SystemC simulation even with SCV transaction recording!
+
+Et voila you completed your first SystemC simulation even with transaction recording!
 If you would like to analyze the recording output further just download the latest release of 
 [SCViewer](https://github.com/Minres/SCViewer/releases) to open the transaction_example.txlog.
 
