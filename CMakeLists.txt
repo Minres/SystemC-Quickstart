@@ -41,6 +41,9 @@ if(NOT DEFINED ENV{SYSTEMC_HOME})
 	
 	add_executable(TransactionExample main.cpp)
     target_link_libraries(TransactionExample systemc-cci::systemc-cci systemc-scv::systemc-scv SystemC::systemc)
+
+	add_executable(FactorialExample Examples/Factorial/testbench.cpp)
+    target_link_libraries(FactorialExample SystemC::systemc)
     
 else()
 	find_package(SystemC REQUIRED)
@@ -48,6 +51,11 @@ else()
     target_include_directories(TransactionExample PUBLIC ${SystemC_INCLUDE_DIRS} ${SCV_INCLUDE_DIRS})
     target_link_directories(TransactionExample PUBLIC ${SCV_LIBRARY_DIRS} ${SystemC_LIBRARY_DIRS})
 	target_link_libraries(TransactionExample PUBLIC ${SCV_LIBRARIES} ${SystemC_LIBRARIES})
+
+	add_executable(FactorialExample Examples/Factorial/testbench.cpp)
+    target_include_directories(TransactionExample PUBLIC ${SystemC_INCLUDE_DIRS})
+    target_link_directories(TransactionExample PUBLIC ${SystemC_LIBRARY_DIRS})
+    target_link_libraries(FactorialExample PUBLIC ${SystemC_LIBRARIES})
 endif()
 
 # CTest is a testing tool that can be used to test your project.
