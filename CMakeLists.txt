@@ -53,8 +53,8 @@ else()
 	target_link_libraries(TransactionExample PUBLIC ${SCV_LIBRARIES} ${SystemC_LIBRARIES})
 
 	add_executable(FactorialExample Examples/Factorial/testbench.cpp)
-    target_include_directories(TransactionExample PUBLIC ${SystemC_INCLUDE_DIRS})
-    target_link_directories(TransactionExample PUBLIC ${SystemC_LIBRARY_DIRS})
+    target_include_directories(FactorialExample PUBLIC ${SystemC_INCLUDE_DIRS})
+    target_link_directories(FactorialExample PUBLIC ${SystemC_LIBRARY_DIRS})
     target_link_libraries(FactorialExample PUBLIC ${SystemC_LIBRARIES})
 endif()
 
