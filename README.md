@@ -6,12 +6,10 @@ A simple C++ CMake project to jump-start development of SystemC-based models and
 ```
 git clone https://github.com/Minres/SystemC-Quickstart
 cd SystemC-Quickstart/
-mkdir build
-cd build/
-cmake ..
-make
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug
+cmake --build build
 ```
-gets you to build a SystemC simulation. E.g. to deploy other libraries just add them into the package list in [CMakeLists.txt](https://github.com/Minres/SystemC-Quickstart/blob/master/CMakeLists.txt#L27):
+gets you to build a SystemC simulation uisng an unoptimized Debug build (for an optimized release build replace `Debug` with `Release`). To deploy other libraries just add them into the package list in [CMakeLists.txt](https://github.com/Minres/SystemC-Quickstart/blob/master/CMakeLists.txt#L27) e.g.:
 
 ```
 	conan_cmake_configure(REQUIRES systemc/2.3.3 systemc-cci/1.0.0 systemc-scv/2.0.1 fmt/8.0.1
@@ -20,7 +18,7 @@ gets you to build a SystemC simulation. E.g. to deploy other libraries just add 
 	                      GENERATORS cmake_find_package)
 
 ```
-is sufficient to be able to start using FMT your models.
+is sufficient to be able to start using the FMT library in your models.
 
 When using Eclipse CDT as developemnt environment it is highly recommended to install Martin Webers
 [cmake4eclipse](https://marketplace.eclipse.org/content/cmake4eclipse) extension as it imports not only the
@@ -47,11 +45,9 @@ Now install needed packages (SystemC, CCI and SCV library), build the project an
 
 ```
 cd SystemC-Quickstart
-mkdir build
-cd build
-cmake ..
-cmake --build .
-bin/TransactionExample
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug
+cmake --build build
+build/TransactionExample
 ```
 
 Et voila you completed your first SystemC simulation even with transaction recording!
@@ -79,11 +75,9 @@ setup_conan()
 Build the project and run it:
 
 ```
-mkdir build
-cd build
-cmake ..
-cmake --build .
-bin/TransactionExample
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug
+cmake --build build
+build/TransactionExample
 ```
 
 ## Notes
@@ -127,9 +121,7 @@ conan profile new default --detect
 # clone the project
 git clone https://github.com/Minres/SystemC-Quickstart.git
 cd SystemC-Quickstart
-mkdir build; cd build
-conan install .. --build=missing
-cmake ..
-cmake --build .
-bin/TransactionExample
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug
+cmake --build build
+build/TransactionExample
 ```
