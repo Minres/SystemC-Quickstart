@@ -22,7 +22,7 @@ if(NOT DEFINED ENV{SYSTEMC_HOME})
 	
 	include(${CMAKE_BINARY_DIR}/conan.cmake)
 	
-	conan_add_remote(NAME minres URL https://artifactory.minres.com/artifactory/api/conan/oss)
+	conan_add_remote(NAME minres URL https://git.minres.com/api/packages/Tooling/conan)
 	
 	conan_cmake_configure(REQUIRES systemc/2.3.3 systemc-cci/1.0.0 systemc-scv/2.0.1
 	                      OPTIONS systemc-cci:shared=False
