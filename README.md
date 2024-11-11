@@ -31,7 +31,7 @@ cmake configuration settings rather also those coming from the conan packages
 Building the project from source is simple. First you need to install [conan.io](https://conan.io/) according to the [instructions](http://docs.conan.io/en/latest/installation.html) and setup the Minres remote:
 
 ```
-pip install conan
+pip install -r requirements.txt
 conan profile new default --detect
 ```
 
