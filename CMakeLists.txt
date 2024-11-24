@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.16)
 
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_BINARY_DIR})
@@ -24,7 +24,7 @@ if(NOT DEFINED ENV{SYSTEMC_HOME})
 	
 	conan_add_remote(NAME minres URL https://git.minres.com/api/packages/Tooling/conan)
 	
-	conan_cmake_configure(REQUIRES systemc/2.3.3 systemc-cci/1.0.0 systemc-scv/2.0.1
+	conan_cmake_configure(REQUIRES systemc/2.3.4 systemc-cci/1.0.0 systemc-scv/2.0.1
 	                      OPTIONS systemc-cci:shared=False
 	                      SETTINGS compiler.cppstd=${CMAKE_CXX_STANDARD}
 	                      GENERATORS cmake_find_package)
@@ -43,6 +43,7 @@ if(NOT DEFINED ENV{SYSTEMC_HOME})
     target_link_libraries(TransactionExample systemc-cci::systemc-cci systemc-scv::systemc-scv SystemC::systemc)
     
 else()
+	# uses the local find_package implementation as it is independend of the way SystemC was installed
 	find_package(SystemC REQUIRED)
 	add_executable(TransactionExample main.cpp)
     target_include_directories(TransactionExample PUBLIC ${SystemC_INCLUDE_DIRS} ${SCV_INCLUDE_DIRS})
