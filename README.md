@@ -62,9 +62,9 @@ compiler.libcxx=libstdc++11
 ```
 in $HOME/.conan/profiles/default
 
-## Detailed Setup steps
+### Detailed preparation steps
 
-### Ubuntu 18.04
+#### Ubuntu
 
 ```
 #prepare system
@@ -75,7 +75,7 @@ pip install --user conan
 export PATH=${PATH}:$HOME/.local/bin
 ```
 
-### Fedora 28
+#### Fedora
 
 ```
 #prepare system
@@ -89,7 +89,7 @@ export PATH=${PATH}:$HOME/.local/bin
 
 ```
 # configure conan
-conan remote add minres https://api.bintray.com/conan/minres/conan-repo
+conan remote add minres https://git.minres.com/api/packages/Tooling/conan
 conan profile new default --detect
 # clone the project
 git clone https://github.com/Minres/SystemC-Quickstart.git

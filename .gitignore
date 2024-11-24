@@ -1,2 +1,4 @@
 /build/
 /transaction_example.txlog
+/.venv
+/transaction_example.txlog
