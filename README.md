@@ -33,6 +33,7 @@ Building the project from source is simple. First you need to install [conan.io]
 ```
 pip install -r requirements.txt
 conan profile new default --detect
+conan remote add minres https://git.minres.com/api/packages/Tooling/conan
 ```
 
 Then clone the SystemC-Quickstart repo:
