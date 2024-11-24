@@ -2,16 +2,14 @@
 A simple C++ CMake project to jump-start development of SystemC-based models and systems. It also shows the power of using a package manager:
 ```
 git clone https://github.com/Minres/SystemC-Quickstart
-cd SystemC-Quickstart/
-mkdir build
-cd build/
-cmake ..
-make
+cd SystemC-Quickstart
+cmake -S . B build
+make -C build
 ``` 
 gets you to build a SystemC simulation. E.g. to deploy SystemC CCI to your project, changing conanfile.txt in the project root to
 ```
 [requires]
-SystemC/2.3.3@minres/stable
+SystemC/2.3.4@minres/stable
 SystemCVerification/2.0.1@minres/stable
 SystemC-CCI/1.0.0@minres/stable
 
@@ -44,11 +42,9 @@ git clone https://github.com/Minres/SystemC-Quickstart.git
 Build the project (it will download the needed libraries) and run it:
 ```
 cd SystemC-Quickstart
-mkdir build
-cd build
-cmake ..
-cmake --build .
-bin/TransactionExample
+cmake -S . B build
+make -C build
+build/bin/TransactionExample
 ```
 Et voila you completed your first SystemC simulation even with transaction recording!
 If you would like to analyze the recording output further just download the latest release of 
@@ -91,11 +87,11 @@ export PATH=${PATH}:$HOME/.local/bin
 # configure conan
 conan remote add minres https://git.minres.com/api/packages/Tooling/conan
 conan profile new default --detect
-# clone the project
+# clone & build the project
 git clone https://github.com/Minres/SystemC-Quickstart.git
 cd SystemC-Quickstart
-mkdir build; cd build
-cmake ..
-cmake --build .
-bin/TransactionExample
+cd SystemC-Quickstart/
+cmake -S . B build
+make -C build
+build/bin/TransactionExample
 ```
